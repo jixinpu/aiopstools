@@ -16,7 +16,7 @@ class ARIMAModel(object):
 				predict_data.append(round(np.max(y),2))
 			return predict_data
        	
-		"""
+        """
         for i in range(0, len(mydata_tmp)):
             mydata_tmp[i] = math.log(mydata_tmp[i])
         """

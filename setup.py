@@ -7,7 +7,7 @@ setup(name='AIops tools',
       author='Xinpu Ji',
       author_email='jixinpu@126.com',
       install_requires=[
-          'pybrain', 'pandas', 'sklearn', 'statsmodels', 'numpy'],
+          'pybrain', 'pandas', 'sklearn', 'statsmodels', 'numpy', 'tensorflow'],
       packages=find_packages(),
       keywords=[
           'AIops',
