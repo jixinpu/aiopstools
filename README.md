@@ -25,7 +25,7 @@ python setup.py install
 ./aiopstools/anomaly_detection/data/data.csv格式。
 
 #### 例子
-我们用一个数据集来说明如何对序列进行检测，该例子使用的数据./anomaly_detection/data/data.csv。该数据中，我们将最后一个点作为检测点，其
+我们用一个数据集来说明如何对序列进行检测，该例子使用的数据./aiopstools/anomaly_detection/data/data.csv。该数据中，我们将最后一个点作为检测点，其
 其他的数据作为训练数据。
 
 ```
@@ -130,3 +130,13 @@ python examples/timeseries_period_predict.py --model_name=lr --data_dir='.aiopst
 你可能有这样的疑问：doc/predict_result.md里面使用的时序数据具有周期性，那如果没有周期性趋势的数据使用周期性预测是不是效果不好？
 
 结果不是这样的，因为我们在周期性预测的时候，首先去判断该序列是否具有周期性，如果具有周期性的话，才会去提取趋势特征，如果没有周期性，我们将使用原来的数据进行预测。
+
+### 交流
+如果对aiops感兴趣，可以和我进行交流，我的邮箱：
+
+jixinpu@126.com
+
+除此之外，我还建立了aiops的知乎专栏，上面会经常更新一些aiops的最新研究进展，知乎专栏地址：
+
+https://zhuanlan.zhihu.com/c_178702079
+
