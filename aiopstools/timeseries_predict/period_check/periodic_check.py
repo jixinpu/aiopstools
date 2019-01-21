@@ -32,7 +32,7 @@ def period_check(timeseries, interval):
             if np.max(dist_list) > dtw_threshold:
                 check_result = 'no'
             else:
-                if (max_value - min_value) < dtw_threshold:
+                if (max_value - min_value) > dtw_threshold:
                     check_result = 'no'
                 else:
                     check_result = 'yes'
