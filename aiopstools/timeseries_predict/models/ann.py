@@ -15,14 +15,14 @@ class BP_network(object):
         hidden_num = self.predict_time * 2
 
         # 生成样本
-		train_data_x = []
-		train_data_y = []
-		if len(y) > (3*(in_num+out_num)+1):
-	    	for i in range(len(y)-2*self.predict_time):
-	        	data_x = y[i:(i+in_num)]
-				data_y = y[(i+in_num):(i+in_num+out_num)]
-				train_data_x.append(data_x)
-				train_data_y.append(data_y)
+        train_data_x = []
+        train_data_y = []
+        if len(y) > (3*(in_num+out_num)+1):
+            for i in range(len(y)-2*self.predict_time):
+                data_x = y[i:(i+in_num)]
+                data_y = y[(i+in_num):(i+in_num+out_num)]
+                train_data_x.append(data_x)
+                train_data_y.append(data_y)
         else:
             print('few data')
             return

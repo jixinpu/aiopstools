@@ -1,15 +1,7 @@
-## 简介
-
 本项目用作单变量的时间序列的预测，目前支持的模型有lr、arima、bp神经网络和lstm。
 
-## 准备工作
+### 运行
 
-```
-cd timeseries_predict
-python setup.py install
-```
-
-## 运行
 本项目提供两种运行方式，一种是非周期性预测，一种是周期性预测。
 
 所谓非周期性就是不进行周期性检测，直接进行预测；而周期性预测是先进行周期性检测，之后根据周期性的情况选择预测模型。下面是周期性预测的流程图，非周期性预测去掉周期性检测，剩下的部分一样。
@@ -18,11 +10,11 @@ python setup.py install
 
 我们提供两种运行方式，
 
-### 非周期性预测
+#### 非周期性预测
 
-#### 数据
+##### 数据
 
-将数据文件data.csv放在如./data中。格式如下：
+将数据文件data.csv放在如./aiopstools/timeseries_predict/data中。格式如下：
 
 ```
 timestamp,value
@@ -33,19 +25,19 @@ timestamp,value
 
 timestamp可以为0，1，2这样的格式，也可以是“1540796400”这种时间戳。
 
-#### 预测
+##### 预测
 
 ```
-python timeseries_predict.py --model_name=ann --data_dir='./data/data.csv' --predict_time=24
+python examples/ts_predict.py --model_name=ann --data_dir='./aiopstools/timeseries_predict/data/data.csv' --predict_time=24
 ```
 
-**详细的结果文档见doc/predict_result.md**
+**详细的结果文档见docs/predict_result.md**
 
-### 周期性预测
+#### 周期性预测
 
-#### 数据
+##### 数据
 
-将数据文件timeseries_data.csv放在如./data中。格式如下：
+将数据文件timeseries_data.csv放在如./aiopstools/timeseries_predict/data中。格式如下：
 
 ```
 timestamp,value
@@ -56,17 +48,17 @@ timestamp,value
 
 timestamp必须是“1540796400”这种时间戳。
 
-#### 预测
+##### 预测
 
 ```
-python timeseries_period_predict.py --model_name=lr --data_dir='./data/timeseries_data.csv' --predict_time=24
+python examples/ts_period_predict.py --model_name=lr --data_dir='./aiopstools/timeseries_predict/data/timeseries_data.csv' --predict_time=24
 ```
 
-**详细结果的文档见doc/predict_result.md**
+**详细结果的文档见docs/predict_result.md**
 
-另外，周期性预测中有个**周期性检测**的方法，具体的检测流程见**doc/period_check.md**。
+另外，周期性预测中有个**周期性检测**的方法，具体的检测流程见**docs/period_check.md**。
 
-## 结果
+### 结果
 
 这四个模型的时间开销和准确率如下：
 
@@ -77,7 +69,7 @@ python timeseries_period_predict.py --model_name=lr --data_dir='./data/timeserie
 | 浅层神经网络(迭代100次)、回归树等 |     中等      |   中   | 浅层神经网络(pybrain)、回归树(sklearn) |
 |               LSTM                | 大（需要GPU） |   高   |               tensorflow               |
 
-## 建议
+### 建议
 
 如果你的数据是如data.csv这样的不带时间戳格式，你可以选择非周期性预测，模型可以根据需要选择上面四种的一种；而如果你的数据如timeseries_data.csv这样带时间戳的格式，建议你选择周期性预测，这样即使选择LR这种精度不太高的模型也可以达到比较好的效果。
 
