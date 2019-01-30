@@ -59,5 +59,6 @@ class BP_network(object):
         return fnn
     
     def predict(self, fnn, y):
+        # 预测结果
         prediction = fnn.activate(y[-self.predict_time:])
         return prediction
