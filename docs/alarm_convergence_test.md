@@ -10,4 +10,3 @@ minsupport为最小支持度，用于生成符合条件的频繁项集，minconf
 python examples/alarm_convergence.py --data_dir=./aiopstools/association_analysis/data/alarm.txt --minsupport=0.2 --minconf=0.5
 ```
 
-## 

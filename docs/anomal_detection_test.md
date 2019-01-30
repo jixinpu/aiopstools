@@ -28,4 +28,4 @@ python examples/detection.py --data_dir=./aiopstools/anomaly_detection/data/data
 - period_freq: 序列的周期，支持H(小时)、D(天)、M(月)和Y(年)
 - voting_num：参与投票的算法符合的个数，建议为3
 
-**具体的检测算法参考docs/anomaly_detection.md**
+**具体的检测算法参考[异常检测](https://github.com/jixinpu/aiopstools/blob/master/docs/anomal_detection.md)**

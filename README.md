@@ -14,11 +14,13 @@ python setup.py install
 
 ## 功能模块
 
-```
-[时间序列异常检测!](https://github.com/jixinpu/aiopstools/tree/master/docs/anomal_detection_test.md)
-[报警收敛!](https://github.com/jixinpu/aiopstools/tree/master/docs/alarm_convergence_test.md)
-[时间序列预测!](https://github.com/jixinpu/aiopstools/tree/master/docs/timeseries_predict_test.md)
-```
+目前我们提供的功能如下：
+
+[时间序列异常检测](https://github.com/jixinpu/aiopstools/tree/master/docs/anomal_detection_test.md)
+
+[报警收敛](https://github.com/jixinpu/aiopstools/tree/master/docs/alarm_convergence_test.md)
+
+[时间序列预测](https://github.com/jixinpu/aiopstools/tree/master/docs/timeseries_predict_test.md)
 
 ## 版本更新
 
