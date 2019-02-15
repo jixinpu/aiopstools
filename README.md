@@ -3,6 +3,7 @@ aiopstools是aiops领域公开的工具包，里面提供的功能包括：
 - 时间序列的预测；
 - 异常检测；
 - 关联分析；
+- 报警关联分析；
 
 ## 安装
 
@@ -22,9 +23,13 @@ python setup.py install
 
 [时间序列预测](https://github.com/jixinpu/aiopstools/tree/master/docs/timeseries_predict_test.md)
 
+[报警关联分析](https://github.com/jixinpu/aiopstools/tree/master/docs/alarm_association_test.md)
+
 ## 版本更新
 
-**2018.12.01** 时间序列预测、异常检测、报警收敛项目的加入；
+**2018.12.01** 时间序列预测、异常检测、报警收敛；
+
+**2019.2.15** 微软论文报警关联分析； 
 
 ### 交流
 如果对aiops感兴趣，可以和我进行交流，我的邮箱：
