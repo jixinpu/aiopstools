@@ -33,5 +33,7 @@ python examples/alarm_association.py
 
 ## 结果
 我们对上面的方法进行了测试，使用6个事件和100+个监控项，取报警事件最相关的top5指标，效果如下表：
+
 ![image-20181024175406044](https://ws4.sinaimg.cn/large/006tNbRwly1fwjgoi8teij30l50legpn.jpg)
+
 可以看到平均准确率能够达到85%，效果还是不错的。
