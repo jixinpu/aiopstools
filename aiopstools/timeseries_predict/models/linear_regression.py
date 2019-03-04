@@ -18,7 +18,7 @@ class Linear_regression(object):
     def predict(self, regr, y):
         time_predict = []
         for i in range(self.predict_time):
-            time_predict.append([i])
+            time_predict.append([i + len(y)])
         predict_outcome = regr.predict(time_predict)
         predict_data = []
         for i in range(self.predict_time):

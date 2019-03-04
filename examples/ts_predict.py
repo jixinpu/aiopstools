@@ -1,5 +1,7 @@
 #-*- encoding: utf-8 -*-
 
+from __future__ import print_function
+
 import os
 import numpy as np
 from argparse import ArgumentParser
@@ -58,7 +60,7 @@ if __name__ == "__main__":
                 truth_data = handle_data.get_truth_data(args.data_dir, args.predict_time)
                 if predict_data is not None and truth_data is not None:
                     accuracy = accuracy.pct(predict_data, truth_data)
-                    print("the prediction error:%f") %accuracy
+                    print("the prediction error:%f" %accuracy)
                     #get_figure(timestamp_list, value_list, predict_data, truth_data)
                 else:
                     print('The result of prediction is null')

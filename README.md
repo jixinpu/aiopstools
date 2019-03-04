@@ -6,7 +6,7 @@ aiopstools是aiops领域公开的工具包，里面提供的功能包括：
 - 报警关联分析；
 
 ## 安装
-
+目前只支持python2，后续会支持python3.
 ```
 git clone https://github.com/jixinpu/aiopstools.git
 cd aiopstools

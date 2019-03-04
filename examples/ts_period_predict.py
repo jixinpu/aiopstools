@@ -1,5 +1,7 @@
 # -*- encoding: utf-8 -*-
 
+from __future__ import print_function
+
 import os
 import pandas as pd
 import numpy as np
@@ -69,7 +71,7 @@ def predict_model(timestamp, value, args):
         # 周期性检测
         # 具有周期性
         period_result = period_check.period_check(dta, interval)
-        print('The result of period is %s') %period_result
+        print('The result of period is %s' %period_result)
 
         if period_result == 'yes':
             try:
@@ -142,7 +144,7 @@ if __name__ == "__main__":
         truth_data = handle_data.get_truth_data(args.data_dir, args.predict_time)
         if predict_data is not None and truth_data is not None:
             accuracy = accuracy.pct(predict_data, truth_data)
-            print("the prediction error:%f") % accuracy
+            print("the prediction error:%f" %accuracy)
             #get_figure(value_list, predict_data, truth_data)
         else:
             print('The result of prediction is null')

@@ -41,7 +41,7 @@ class ARIMAModel(object):
                 return model
         except:
             return
-	
-	def predict(self, model, y):
-		predict_outcome = model.forecast(self.predict_time)
-		return predict_outcome[0]
+    
+    def predict(self, model, y):
+        predict_outcome = model.forecast(self.predict_time)
+        return predict_outcome[0]

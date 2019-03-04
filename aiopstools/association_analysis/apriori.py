@@ -1,5 +1,6 @@
 # -*- encoding: utf-8 -*-
 
+import sys
 from numpy import *
 
 def createC1(dataSet):
@@ -11,7 +12,6 @@ def createC1(dataSet):
                 C1.append([item])
 
     C1.sort()
-
     # 使用frozenset
     return map(frozenset, C1)
 
@@ -27,7 +27,7 @@ def scanD(D, Ck, minSupport):
     for tid in D:
         for can in Ck:
             if can.issubset(tid):
-                if not ssCnt.has_key(can):
+                if can not in ssCnt:
                     ssCnt[can] = 1
                 else:
                     ssCnt[can] += 1
@@ -39,7 +39,7 @@ def scanD(D, Ck, minSupport):
         support = ssCnt[key]/numItems
         # support = ssCnt[key]
         # 保留支持度大于最小支持度
-        if support >= minSupport:
+        if float(support) >= float(minSupport):
             # 插入到列表o号位置
             retList.insert(0, key)
         supportData[key] = support
@@ -115,8 +115,8 @@ def calcConf(freqSet, H, supportData, brl, minConf=0.7):
     for conseq in H:
         # 计算可信度
         conf = supportData[freqSet] / supportData[freqSet - conseq]
-        if conf >= minConf:
-            print freqSet-conseq,'-->',conseq,'conf:',conf
+        if float(conf) >= float(minConf):
+            print(freqSet-conseq,'-->',conseq,'conf:',conf)
             brl.append((freqSet - conseq, conseq, round(conf, 2)))
             prunedH.append(conseq)
     return prunedH

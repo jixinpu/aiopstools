@@ -38,6 +38,6 @@ if __name__ == "__main__":
 
     alarm_data = get_data(args.data_dir)
     L, suppdata = apriori(alarm_data, minSupport=args.minsupport)
-    print(L, suppdata)
+    #print(L, suppdata)
     rules = generateRules(L, suppdata, minConf=args.minconf)
     print(rules)
