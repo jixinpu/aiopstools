@@ -20,6 +20,6 @@ class Ewma(object):
         if abs(check_value - expAverage['data'][len(expAverage['data'])-1]) > 3*stdDev['data'][len(expAverage['data'])-1] and (check_value-data[-1])> 0:
             return "uprush", abs(check_value-expAverage['data'][len(expAverage['data'])-1])
         if abs(check_value - expAverage['data'][len(expAverage['data'])-1]) > 3*stdDev['data'][len(expAverage['data'])-1] and (check_value-data[-1])< 0:
-            return "anticlimax"
+            return "anticlimax", abs(check_value-expAverage['data'][len(expAverage['data'])-1])
         else:
             return "no alarm", abs(check_value-expAverage['data'][len(expAverage['data'])-1])
