@@ -141,11 +141,11 @@ class POP_Amplitude(object):
         if len(amplitude_data) >= 1:
             value = np.mean(amplitude_data)
             if abs(amplitude_data[0]) > np.max(amplitude_data) * self.max_threshold and check_value > data.values[-1]:
-                return "uprush",value
+                return "uprush", value
             if abs(amplitude_data[0]) > np.max(amplitude_data) * self.min_threshold and check_value < data.values[-1]:
-                return "anticlimax",value
+                return "anticlimax", value
             else:
-                return "no alarm",value
+                return "no alarm", value
 
 class Tail(object):
     """
