@@ -18,7 +18,7 @@ if __name__ == "__main__":
 
     parser.add_argument(
         '--voting_num', default=3,
-        help='The voting number')
+        help='The voting number', type=int)
 
     args = parser.parse_args()
 
