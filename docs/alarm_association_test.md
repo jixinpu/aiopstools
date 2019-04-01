@@ -19,7 +19,7 @@
 
 host.alive是我们的报警项，cpu.idle、mem.swapused.percent、mem.memused.percent、net.if.total.bits.sum以及ss.closed是我们的监控项，我们需要分析哪些监控项跟host.alive报警项有关。
 
-报警项需要的数据是报警发生的时刻，整理成[报警发生时刻数据](https://github.com/jixinpu/aiopstools/tree/master/aiopstools/association_analysis/data/host.alive.csv)
+报警项需要的数据是报警发生的时刻，整理成[报警发生时刻数据](https://github.com/jixinpu/aiopstools/tree/master/aiopstools/association_analysis/data/alarm_association/host.alive.csv)
 
 监控项需要两个数据，一个是监控项的时间序列数据（nodedata.csv），一个是报警时刻之前的5分钟数据（item_alarm_data.csv）
 
