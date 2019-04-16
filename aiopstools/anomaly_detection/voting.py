@@ -4,8 +4,7 @@ import models
 
 
 def voting(data, check_value, freq, voting_num):
-    """
-    无监督投票检测机制
+    """无监督投票检测机制
     :param data:时间序列
     :param check_value:检测值
     :param freq: 周期值

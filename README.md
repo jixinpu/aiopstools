@@ -1,42 +1,40 @@
 # aiopstools
-aiopstools是aiops领域公开的工具包，里面提供的功能包括：
-- 时间序列的预测；
-- 异常检测；
-- 报警收敛；
-- 报警关联分析；
+**Aiopstools** is a toolkit for aiops. It realizes some ops scenes by using ai. You can import modules easily to achieve functions.  
 
-## 安装
-目前只支持python2，后续会支持python3.
+[ 中文文档](https://github.com/jixinpu/aiopstools/blob/master/README_CN.md)
+
+## Installation
+
 ```
 git clone https://github.com/jixinpu/aiopstools.git
 cd aiopstools
 python setup.py install
 ```
 
-## 功能模块
+Currently only python2 is supported, and Python3 will be supported later.
 
-目前我们提供的功能如下：
+## Modules
 
-[时间序列异常检测](https://github.com/jixinpu/aiopstools/tree/master/docs/anomal_detection_test.md)
+Aiopstools provides capabilities:
 
-[报警收敛](https://github.com/jixinpu/aiopstools/tree/master/docs/alarm_convergence_test.md)
+[ Anomaly detection](https://github.com/jixinpu/aiopstools/tree/master/docs/anomal_detection_test.md)
 
-[时间序列预测](https://github.com/jixinpu/aiopstools/tree/master/docs/timeseries_predict_test.md)
+[Alarm convergence](https://github.com/jixinpu/aiopstools/tree/master/docs/alarm_convergence_test.md)
 
-[报警关联分析](https://github.com/jixinpu/aiopstools/tree/master/docs/alarm_association_test.md)
+[Time Series Forecasting Method](https://github.com/jixinpu/aiopstools/tree/master/docs/timeseries_predict_test.md)
 
-## 版本更新
+[Association analysis for alarms](https://github.com/jixinpu/aiopstools/tree/master/docs/alarm_association_test.md)
 
-**2018.12.01** 时间序列预测、异常检测、报警收敛；
+## Versions
 
-**2019.2.15** 微软论文报警关联分析； 
+**2018.12.01** Time series forecasting、anomaly detection、alarm convergence；
 
-### 交流
-如果对aiops感兴趣，可以和我进行交流，我的邮箱：
+**2019.2.15** Association analysis； 
 
-jixinpu@126.com
+## Supports
 
-除此之外，我还建立了aiops的知乎专栏，上面会经常更新一些aiops的最新研究进展，知乎专栏地址：
+If have interest in aiops, you can contact me. My email is jixinpu@126.com
 
-https://zhuanlan.zhihu.com/c_178702079
+In addition to this, i have a special column about aiops, which updates recent progress in the field. The url of special column is https://zhuanlan.zhihu.com/c_178702079
+
 

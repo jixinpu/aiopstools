@@ -8,7 +8,7 @@
 
 ![img](https://ws1.sinaimg.cn/large/006tNbRwly1fx6k2ynpz7j30jo0aj74n.jpg)
 
-我们提供两种运行方式，
+我们提供两种运行方式，一种是非周期性预测，一种是周期性预测，下面将对这两种方式进行介绍。
 
 #### 非周期性预测
 

@@ -46,8 +46,7 @@ def scanD(D, Ck, minSupport):
     return retList, supportData
 
 def aprioriGen(Lk, k):
-    """
-    构建候选集Ck
+    """构建候选集Ck
     如以{0}、{1}、{2}作为输入，会生成{0,1}、{0,2}、{1,2}
     :param Lk:频繁项集列表
     :param k:项集元素的个数

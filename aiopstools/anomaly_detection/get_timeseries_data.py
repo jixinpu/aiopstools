@@ -4,8 +4,7 @@ import time
 import pandas as pd
 
 def get_data(filename):
-    """
-    从csv中获取数据
+    """从csv中获取数据
     :param filename:文件名
     :return:
     dta:series格式的时间序列

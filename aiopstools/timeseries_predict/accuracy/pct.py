@@ -3,7 +3,7 @@
 import numpy as np
 
 def pct(predict_value, truth_value):
-    '''预测准确度'''
+    """预测准确度"""
     if len(predict_value) != len(truth_value):
         print('The length of predict_value and truth_value is not same.')
         return

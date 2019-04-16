@@ -4,7 +4,7 @@
 ## 平滑处理
 时间序列经常会出现毛刺的点，需要做平滑处理才能分析，类似下图中的数据。
 
-![alt](https://www.opsdev.cn/static/upload/20180803/tMa8VZrKF01Z4KUAAelEYTUF.png)
+![img](https://ws2.sinaimg.cn/large/006tNc79ly1g23ezy8le0j30go0ci3zp.jpg)
 
 消除数据的毛刺，可以用移动平均法，但是移动平均有时候处理完后并不能使数据平滑，本文中采用的方法很简单：把每个点与上一点的变化值作为一个新的序列，对里边的异常值，也就是变化比较离谱的值剃掉，用前后数据的均值填充，详细的代码如下diff_smooth函数，输入的变量为时间序列以及要处理后的时间间隔，输出为处理后的时间序列。
 
@@ -44,7 +44,7 @@ def diff_smooth(ts, interval):
 ```
 上图的数据经过处理以后，变成了下图的样子。可以看到毛刺已经被去掉，序列变得平滑了很多，有利于我们进行下面的分析。
 
-![alt](https://www.opsdev.cn/static/upload/20180803/o2VDFdxrca_XyVrVWMAkhJyI.png)
+![img](https://ws2.sinaimg.cn/large/006tNc79ly1g23f0g0eeuj30go0ci3zr.jpg)
 
 # 分段求DTW
 对数据进行平滑处理以后，我们接下来就会检测序列是否具有周期性。对周期性进行检测，很容易想到的方法是：
@@ -53,11 +53,11 @@ def diff_smooth(ts, interval):
 3. 比较这n/T个单元的相似度，如果比较相似，则说明具有周期性，如果不是，则不具有周期性；
 
 本文也按照上面的方法对序列进行切割，切割后形成三个单元，如下图：
-![alt](https://www.opsdev.cn/static/upload/20180828/841Qkd0xNjB5WoM24b3YSook.png)
+![img](https://ws3.sinaimg.cn/large/006tNc79ly1g23f105n0kj30go0cijss.jpg)
 
 对于序列周期性检测最终转化为求三个单元的相似度。求时间序列的相似度有皮尔逊相关系数、有曲线拟合方法等，我们借鉴了NLP中求语音片段相似度的方法--DTW距离，来求三个单元的相似度。DTW通过把时间序列进行延伸和缩短，来计算两个时间序列性之间的相似性。
 
-![alt](https://www.opsdev.cn/static/upload/20180828/hP86495dyTnewVI4c3vRZcov.jpg)
+![img](https://ws1.sinaimg.cn/large/006tNc79ly1g23f1g36qwj30df067ta3.jpg)
 
 如上图所示，上下两条实线代表两个时间序列，时间序列之间的虚线代表两个时间序列之间的相似的点。DTW使用所有这些相似点之间的距离的和，称之为归整路径距离(Warp Path Distance)来衡量两个时间序列之间的相似性。
 

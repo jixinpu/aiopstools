@@ -15,7 +15,7 @@ from aiopstools.timeseries_predict import accuracy
 from aiopstools.timeseries_predict import result_show
 
 def period_predict(decomposition, args, interval):
-    """具有周期性时间序列的预测."""
+    """具有周期性时间序列的预测"""
     trend = decomposition.trend
     seasonal = decomposition.seasonal
 
@@ -28,17 +28,12 @@ def period_predict(decomposition, args, interval):
     if train_model is not None:
         predict_data = model.predict(train_model, trend.values)
 
-    '''
-    预测新数据
-    '''
-
+    # 预测新数据
     interval = str(interval/60) + 'min'
     # 生成长度为n的时间索引，赋给预测序列
     predict_time_index = pd.date_range(start=trend.index[-1], periods=(args.predict_time+1), freq=interval)[1:]
 
-    '''
-    为预测出的趋势数据添加周期数据和残差数据
-    '''
+    # 为预测出的趋势数据添加周期数据和残差数据
     values = []
 
     # enumerate() 函数用于将一个可遍历的数据对象(如列表、元组或字符串)组合为一个索引序列,同时列出数据和数据下标,一般用在for循环当中。

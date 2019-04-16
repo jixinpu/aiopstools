@@ -12,7 +12,7 @@ class IForest(object):
         data = timeseries_data.values.tolist()
         check_value_list = []
         check_value_list.append([check_value])
-        #孤立森林异常点检查，data是列表形式
+        # 孤立森林异常点检查，data是列表形式
         x_train = []
         for i in range(len(data)):
             x_train.append([data[i]])

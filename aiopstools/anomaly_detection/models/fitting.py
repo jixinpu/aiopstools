@@ -8,10 +8,9 @@ class Ewma(object):
         self.freq = freq
 
     def check(self, data, check_value):
-        '''
-        指数加权移动平均模型
+        """指数加权移动平均模型
         衡量序列的整体水平，方便检测出短期趋势
-        '''
+        """
         df = DataFrame({'data':data})
         expAverage = df.ewm(com=20).mean()
         stdDev = df.ewm(com=20).std()
