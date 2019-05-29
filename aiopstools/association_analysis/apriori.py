@@ -13,15 +13,19 @@ def createC1(dataSet):
 
     C1.sort()
     # 使用frozenset
-    return map(frozenset, C1)
+    return list(map(frozenset, C1))
 
 
 def scanD(D, Ck, minSupport):
-    """
-    :param D: set类型
-    :param Ck: 候选集列表
-    :param minSupport:
-    :return:
+    """选出大于最小支持度的项集
+
+    参数：
+    D: set类型
+    Ck: 候选集列表
+    minSupport: 最小支持度
+
+    返回:
+    retList, supportData
     """
     ssCnt = {}
     for tid in D:
@@ -40,7 +44,7 @@ def scanD(D, Ck, minSupport):
         # support = ssCnt[key]
         # 保留支持度大于最小支持度
         if float(support) >= float(minSupport):
-            # 插入到列表o号位置
+            # 插入到列表0号位置
             retList.insert(0, key)
         supportData[key] = support
     return retList, supportData
@@ -48,9 +52,13 @@ def scanD(D, Ck, minSupport):
 def aprioriGen(Lk, k):
     """构建候选集Ck
     如以{0}、{1}、{2}作为输入，会生成{0,1}、{0,2}、{1,2}
-    :param Lk:频繁项集列表
-    :param k:项集元素的个数
-    :return: Ck
+
+    参数：
+    Lk:频繁项集列表
+    k:项集元素的个数
+
+    返回:
+    Ck
     """
     retList = []
     lenLk = len(Lk)
@@ -67,17 +75,19 @@ def aprioriGen(Lk, k):
 
 
 def apriori(dataSet, minSupport):
-    """
-    使用Apriori算法来发现频繁项集
-    :param dataSet: 数据集
-    :param minSupport: 最小支持度
-    :return:
+    """使用Apriori算法来发现频繁项集
+
+    参数：
+    dataSet: 数据集
+    minSupport: 最小支持度
+
+    返回:
     L:满足最小支持度的频繁项集列表
     supportData:所有项集的支持度
     """
     # 生成候选集列表
     C1 = createC1(dataSet)
-    D = map(set, dataSet)
+    D = list(map(set, dataSet))
     # 得到L1
     L1, supportData = scanD(D, C1, minSupport)
     # L为频繁项集，L最后包含L1，L2，L3...
@@ -94,9 +104,7 @@ def apriori(dataSet, minSupport):
     return L, supportData
 
 def generateRules(L, supportData, minConf=0.7):
-    """
-    关联规则生成函数:从频繁项集中挖掘关联规则
-    """
+    """关联规则生成函数:从频繁项集中挖掘关联规则"""
     bigRuleList = []
     for i in range(1, len(L)):
         for freqSet in L[i]:

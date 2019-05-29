@@ -25,4 +25,4 @@ if __name__ == "__main__":
     history_data, check_value = get_data(args.data_dir)
     check_result = voting(history_data, check_value, args.period_freq, args.voting_num)
     print('-------------------------------------------------------')
-    print("final result: %s") %check_result
+    print("final result: %s" %check_result)

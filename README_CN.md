@@ -6,7 +6,7 @@ aiopstools是aiops领域公开的工具包，里面提供的功能包括：
 - 报警关联分析；
 
 ## 安装
-目前只支持python2，后续会支持python3.
+目前既支持python2，也支持python3。
 ```
 git clone https://github.com/jixinpu/aiopstools.git
 cd aiopstools
@@ -39,3 +39,7 @@ jixinpu@126.com
 除此之外，我还建立了aiops的知乎专栏，上面会经常更新一些aiops的最新研究进展，知乎专栏地址：
 
 https://zhuanlan.zhihu.com/c_178702079
+
+## 问题
+
+1.如果您使用python3，需要将/site-packages/pybrain/tools/functions.py", line 4的expm2改成expm。

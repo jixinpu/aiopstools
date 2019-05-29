@@ -11,7 +11,7 @@ cd aiopstools
 python setup.py install
 ```
 
-Currently only python2 is supported, and Python3 will be supported later.
+Python2 and python3 are all supported.
 
 ## Modules
 
@@ -35,6 +35,16 @@ Aiopstools provides capabilities:
 
 If have interest in aiops, you can contact me. My email is jixinpu@126.com
 
-In addition to this, i have a special column about aiops, which updates recent progress in the field. The url of special column is https://zhuanlan.zhihu.com/c_178702079
+In addition to this, i have a special column about aiops, which updates recent progress in the field. The url of special column is https://zhuanlan.zhihu.com/c_178702079.
+
+## Problems
+
+1.If you use python3, please altering the file's content.
+
+```
+/site-packages/pybrain/tools/functions.py", line 4, expm2 to expm.
+```
+
+
 
 
