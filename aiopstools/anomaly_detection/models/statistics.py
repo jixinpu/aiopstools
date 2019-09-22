@@ -106,8 +106,9 @@ class POP_Amplitude(object):
                 else:
                     index_list = data.index.tolist()
                     end_index = index_list.index(a_index)
-                    x = data.index[start_index]
+                    x = data[start_index]
                     y = data.values[end_index]
+                    
                     if x != 0.0:
                         tmp = (y - x) / x
                         if tmp == 0.0:
