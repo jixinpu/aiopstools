@@ -19,7 +19,9 @@ class POP(object):
             data_list.append(data.values[-1])
             for i in range(check_num-1):
                 a_index = ''
-                if self.freq == 'H':
+                if self.freq == 'm':
+                    a_index = start_index + datetime.timedelta(minutes=int(-1))
+                elif self.freq == 'H':
                     a_index = start_index + datetime.timedelta(minutes=int(-60))
                 elif self.freq == 'D':
                     a_index = start_index + datetime.timedelta(hours=int(-24))
@@ -89,7 +91,9 @@ class POP_Amplitude(object):
             amplitude_data_list.append(last_amplitude)
             for i in range(check_num-1):
                 a_index = ''
-                if self.freq == 'H':
+                if self.freq == 'm':
+                    a_index = start_index + datetime.timedelta(minutes=int(-1))
+                elif self.freq == 'H':
                     a_index = start_index + datetime.timedelta(minutes=int(-60))
                 elif self.freq == 'D':
                     a_index = start_index + datetime.timedelta(hours=int(-24))
